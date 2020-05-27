@@ -1,8 +1,0 @@
-prefix=/home/davinio/catkin_ws/install_isolated
-
-Name: trac_ik_python
-Description: Description of trac_ik_python
-Version: 1.5.1
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

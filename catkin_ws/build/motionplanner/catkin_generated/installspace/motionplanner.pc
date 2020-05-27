@@ -1,8 +1,0 @@
-prefix=/home/davinio/catkin_ws/install
-
-Name: motionplanner
-Description: Description of motionplanner
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

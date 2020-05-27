@@ -1,2 +1,0 @@
-- setup-file:
-    local-name: /home/davinio/catkin_ws/devel_isolated/moveit_chomp_optimizer_adapter/setup.sh
