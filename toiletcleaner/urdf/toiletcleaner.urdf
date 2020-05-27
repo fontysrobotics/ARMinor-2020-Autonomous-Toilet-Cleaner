@@ -7,6 +7,8 @@
   <xacro:property name="r200_cam_rgb_pz" value="1.013" />
   <xacro:property name="r200_cam_depth_offset" value="0.01" />
   -->
+  <xacro:property name="camera_link2" value="0.05" /> <!-- Size of square 'camera' box at the frame -->
+
   <!--#region robot-->
   <link name="base_footprint" />
   <joint name="base_joint" type="fixed">
@@ -437,6 +439,38 @@
     <child link="camera_depth_optical_frame" />
   </joint>
   <link name="camera_depth_optical_frame" />
+
+  <!--#Camera 2-->
+  <joint name="camera_joint2" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="0.3 0 0.34" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="camera_link2"/>
+  </joint>
+
+  <link name="camera_link2">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="${camera_link2} ${camera_link2} ${camera_link2}"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="${camera_link2} ${camera_link2} ${camera_link2}"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
   <!--#endregion links-->
 
   <!--#endregion extraLiniks-->
@@ -653,6 +687,49 @@
       </plugin>
     </sensor>
   </gazebo>
+
+  <!--#Second Cam on base-->
+  <gazebo reference="camera_link2">
+    <sensor type="camera" name="camera2">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>800</width>
+          <height>800</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise is sampled independently per pixel on each frame.
+               That pixel's noise value is added to each of its color
+               channels, which at that point lie in the range [0,1]. -->
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller2" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>rrbot/camera2</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_link2</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+
   <!--#endregion cams-->
 
 
