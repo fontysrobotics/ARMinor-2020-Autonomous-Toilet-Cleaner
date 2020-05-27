@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/davinio/catkin_ws/devel_isolated/moveit_plugins/setup.sh

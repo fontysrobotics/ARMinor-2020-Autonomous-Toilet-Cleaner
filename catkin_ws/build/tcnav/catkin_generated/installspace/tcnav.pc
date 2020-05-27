@@ -1,0 +1,8 @@
+prefix=/home/davinio/catkin_ws/install
+
+Name: tcnav
+Description: Description of tcnav
+Version: 1.2.1
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

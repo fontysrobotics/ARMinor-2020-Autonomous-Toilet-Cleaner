@@ -1,0 +1,8 @@
+prefix=/home/davinio/catkin_ws/devel
+
+Name: tcmoveit
+Description: Description of tcmoveit
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

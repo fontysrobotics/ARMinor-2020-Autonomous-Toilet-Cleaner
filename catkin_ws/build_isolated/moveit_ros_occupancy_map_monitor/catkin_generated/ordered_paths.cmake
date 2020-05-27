@@ -1,0 +1,1 @@
+set(ORDERED_PATHS "/home/davinio/catkin_ws/devel_isolated/moveit_core/lib;/home/davinio/catkin_ws/devel_isolated/geometric_shapes/lib;/opt/ros/melodic/lib")

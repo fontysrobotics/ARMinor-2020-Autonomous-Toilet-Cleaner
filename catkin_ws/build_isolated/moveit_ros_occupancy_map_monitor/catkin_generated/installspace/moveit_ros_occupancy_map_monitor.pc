@@ -1,0 +1,8 @@
+prefix=/home/davinio/catkin_ws/install_isolated
+
+Name: moveit_ros_occupancy_map_monitor
+Description: Description of moveit_ros_occupancy_map_monitor
+Version: 1.0.1
+Cflags: -I${prefix}/include -I/usr/include/eigen3 -I/home/davinio/catkin_ws/devel_isolated/octomap/include
+Libs: -L${prefix}/lib -lmoveit_ros_occupancy_map_monitor /home/davinio/catkin_ws/devel_isolated/octomap/lib/liboctomap.so /home/davinio/catkin_ws/devel_isolated/octomap/lib/liboctomath.so
+Requires: moveit_core moveit_msgs geometric_shapes tf2_ros
