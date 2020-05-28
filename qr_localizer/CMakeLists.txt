@@ -8,10 +8,7 @@ project(qr_localizer)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  cv2
   cv_bridge
-  numpy
-  qrDetection
   roscpp
   rospy
   std_msgs
@@ -109,7 +106,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES qr_localizer
-#  CATKIN_DEPENDS cv2 cv_bridge numpy qrDetection roscpp rospy std_msgs
+#  CATKIN_DEPENDS cv_bridge roscpp rospy std_msgs
 #  DEPENDS system_lib
 )
 
