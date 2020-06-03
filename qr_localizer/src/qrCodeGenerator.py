@@ -17,5 +17,5 @@ class locationCode:
         big_code.png(self.name+'.png', scale=20, module_color=[0, 0, 0, 128], background=[0xFF, 0xff, 0xff])
         print("The QR-code should be made...")
 
-qr = locationCode(-5,4.95,0.5,0,0,-90,13,"QR_Code1")
+qr = locationCode(-5,4.95,0.34,0,0,-90,13,"QR_Code1")
 qr.createQR()
