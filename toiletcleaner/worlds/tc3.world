@@ -88,7 +88,7 @@
     </scene>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>6.23496 -5.92865 5.75164 0 0.357802 2.33318</pose>
+        <pose frame=''>-4.34668 2.26682 1.47991 0 0.485797 1.9892</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -108,15 +108,15 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <state world_name='default'>
-      <sim_time>1172 895000000</sim_time>
-      <real_time>316 175439431</real_time>
-      <wall_time>1590585248 166084366</wall_time>
-      <iterations>315395</iterations>
-      <model name='BasicQR-Code2'>
-        <pose frame=''>-5 4.95 0.5 3.14159 -0 -1.57</pose>
+      <sim_time>1379 66000000</sim_time>
+      <real_time>206 556840741</real_time>
+      <wall_time>1591192700 312157914</wall_time>
+      <iterations>206171</iterations>
+      <model name='QrCube2.0'>
+        <pose frame=''>-5 4.95 0.34 3.14159 -0 -1.57</pose>
         <scale>1 1 1</scale>
         <link name='link_0'>
-          <pose frame=''>-5 4.95 0.5 3.14159 -0 -1.57</pose>
+          <pose frame=''>-5 4.95 0.34 3.14159 -0 -1.57</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -2110,7 +2110,7 @@
       </link>
       <pose frame=''>-5.8369 -1.7199 0 0 -0 0</pose>
     </model>
-    <model name='BasicQR-Code2'>
+    <model name='QrCube2.0'>
       <link name='link_0'>
         <inertial>
           <mass>1</mass>
@@ -2123,12 +2123,12 @@
             <izz>0.166667</izz>
           </inertia>
         </inertial>
-        <pose frame=''>0 0 -0 0 -0 0</pose>
+        <pose frame=''>0 4e-06 0 0 -0 0</pose>
         <visual name='visual'>
           <pose frame=''>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/ros/Documents/RobotCleaner/StandardQRCube.dae</uri>
+              <uri>/home/ros/catkin_ws/src/DeltaProject/toiletcleaner/meshes/QR-codes/StandardQRCube.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -2141,7 +2141,7 @@
           <pose frame=''>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/ros/Documents/RobotCleaner/StandardQRCube.dae</uri>
+              <uri>/home/ros/catkin_ws/src/DeltaProject/toiletcleaner/meshes/QR-codes/StandardQRCube.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -2197,7 +2197,7 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose frame=''>-4.66837 4.64154 0 0 -0 0</pose>
+      <pose frame=''>-4.72755 4.07432 0 0 -0 0</pose>
     </model>
   </world>
 </sdf>

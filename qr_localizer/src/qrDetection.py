@@ -7,6 +7,9 @@ import time
 import math
 import glob
 
+#temp
+import os
+
 
 font = cv2.FONT_HERSHEY_SIMPLEX
 
@@ -30,6 +33,9 @@ class QrDetector():
 
         [cameraNum] Needed when using Mode 0
         """
+
+        print(os.getcwd())
+
         self.stop = False
         self.qrDecoder = cv2.QRCodeDetector()    
         self.criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 30, 0.001)
