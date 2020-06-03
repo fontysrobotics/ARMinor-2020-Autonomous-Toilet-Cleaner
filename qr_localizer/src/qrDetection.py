@@ -110,14 +110,14 @@ class QrDetector():
             return False,[],[],1
 
     def calculateOwnLocation(self,distance,QRAngX,QRAngY,QRAngZ):
-        X=0
-        Y=0
+        X=math.cos(QRAngZ)*distance
+        Y=math.cos(QRAngZ)*distance
         Z=0
         AngX=0
         AngY=0
-        AngZ=0
+        AngZ=180-QRAngZ
 
-        return X, Y, Z,AngX,AngY,AngZ
+        return [X, Y, Z],[AngX,AngY,AngZ]
 
     def calculateGlobalLocation(self,coordinatesQR,coordinatesRoQR,rotationQR,rotationRoQR):
         X=0
@@ -127,7 +127,7 @@ class QrDetector():
         AngY=0
         AngZ=0
  
-        return X,Y,Z,AngX,AngY,AngZ
+        return [X,Y,Z],[AngX,AngY,AngZ]
 
     def readImage(self,frame):
         """This only looks for QR-code and processes it from a single input image"""
