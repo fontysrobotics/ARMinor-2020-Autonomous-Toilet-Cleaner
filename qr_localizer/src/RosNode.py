@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python2
 
 import numpy
 import cv2
@@ -11,6 +11,7 @@ from rospy.numpy_msg import numpy_msg
 from rospy_tutorials.msg import Floats
 
 from qrDetection import *
+
 qrDetector = QrDetector(mode=2,visualizeResult=True)
 
 dtype = np.float64
