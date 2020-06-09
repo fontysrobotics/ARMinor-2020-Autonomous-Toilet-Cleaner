@@ -159,7 +159,7 @@ class QrDetector():
             if k == 27:
                 self.stop=True
         time.sleep(0.05)
-        #return [dis,ang[0][0],ang[1][0],ang[2][0]]
+        return [dis,ang[0][0],ang[1][0],ang[2][0]]
 
 
     def loop(self):

@@ -13,6 +13,8 @@ def callback(data):
         cv_image = CvBridge().imgmsg_to_cv2(data, "bgr8")
 
         cv2.imshow("Image window", cv_image)
+        #add picture to 
+
 
         #If a is pressed, store the image
         if cv2.waitKey(33) == ord('a'):

@@ -1,3 +1,4 @@
 <launch>
     <node name="listener_node" pkg="qr_localizer" type="RosCapture.py" cwd="node" output="screen"/>
+        <arg name="calibrate" default="false"/>
 </launch>
