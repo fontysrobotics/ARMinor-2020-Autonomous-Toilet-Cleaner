@@ -12,6 +12,7 @@ class cameraCalibration():
     saveReady = False
 
     def __init__(self,debug=False,showWindow=False):
+        """Debug and showWindow are off by default. Changing these values will give more insight in what is happening"""
         self.debug=debug
         self.showWindow=showWindow
 
@@ -83,13 +84,13 @@ class cameraCalibration():
                     # Draw and display the corners
                     img = cv2.drawChessboardCorners(img, (self.chessX,self.chessY), corners2,ret)
                     cv2.imshow('img',img)
-                    cv2.waitKey(500)
+                    cv2.waitKey(100)
 
         cv2.destroyAllWindows()
         if self.debug:
             print(objpoints)
             print(imgpoints)
-        self._mtx_, self._dist_, self._rvecs_, self._tvecs_ = cv2.calibrateCamera(objpoints, imgpoints, gray.shape[::-1],None,None)
+        _, self._mtx_, self._dist_, self._rvecs_, self._tvecs_ = cv2.calibrateCamera(objpoints, imgpoints, gray.shape[::-1],None,None)
         self.saveReady = True
 
     def calibrate(self):
@@ -123,13 +124,13 @@ class cameraCalibration():
                     # Draw and display the corners
                     img = cv2.drawChessboardCorners(img, (chessX,chessY), corners2,ret)
                     cv2.imshow('img',img)
-                    cv2.waitKey(500)
+                    cv2.waitKey(100)
 
         cv2.destroyAllWindows()
         if self.debug:
             print(objpoints)
             print(imgpoints)
-        self._mtx_, self._dist_, self._rvecs_, self._tvecs_ = cv2.calibrateCamera(objpoints, imgpoints, gray.shape[::-1],None,None)
+        _, self._mtx_, self._dist_, self._rvecs_, self._tvecs_ = cv2.calibrateCamera(objpoints, imgpoints, gray.shape[::-1])
 
     def undistortPicture(self,pictureLocation, mtx, dist):
         lastImg = cv2.imread(pictureLocation)
@@ -151,6 +152,6 @@ class cameraCalibration():
 
 
 if __name__=="__main__":
-    calibrate = cameraCalibration(True,True)
+    calibrate = cameraCalibration()
     calibrate.calibrateFromFolder("qr_localizer/src/calibrationFiles/*.jpg")
     calibrate.saveCalibrationFile("Thomas.npz")
