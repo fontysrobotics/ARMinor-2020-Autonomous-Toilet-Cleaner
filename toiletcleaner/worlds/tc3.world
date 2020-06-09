@@ -88,7 +88,7 @@
     </scene>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>-4.34668 2.26682 1.47991 0 0.485797 1.9892</pose>
+        <pose frame=''>0.210353 0.456547 1.70871 0 0.461799 3.1372</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -108,10 +108,20 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <state world_name='default'>
-      <sim_time>1379 66000000</sim_time>
-      <real_time>206 556840741</real_time>
-      <wall_time>1591192700 312157914</wall_time>
-      <iterations>206171</iterations>
+      <sim_time>1390 20000000</sim_time>
+      <real_time>11 5697420</real_time>
+      <wall_time>1591274055 931237523</wall_time>
+      <iterations>10954</iterations>
+      <model name='CalibrationCheckboard'>
+        <pose frame=''>-2.12991 0.045062 0.34 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link_1'>
+          <pose frame=''>-2.12991 0.045062 0.34 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
       <model name='QrCube2.0'>
         <pose frame=''>-5 4.95 0.34 3.14159 -0 -1.57</pose>
         <scale>1 1 1</scale>
@@ -173,58 +183,58 @@
         </link>
       </model>
       <model name='toiletenv'>
-        <pose frame=''>-4.22285 0.175339 0 0 -0 0</pose>
+        <pose frame=''>-4.22209 0.180638 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link_0'>
-          <pose frame=''>-7.66353 0.533699 0 0 -0 0</pose>
+          <pose frame=''>-7.66277 0.538998 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='link_0_clone'>
-          <pose frame=''>-6.93157 1.31948 0 0 0 -1.57036</pose>
+          <pose frame=''>-6.93081 1.32478 0 0 0 -1.57036</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='link_0_clone_0'>
-          <pose frame=''>-6.92972 -0.27319 0 0 -0 1.54952</pose>
+          <pose frame=''>-6.92896 -0.267891 0 0 -0 1.54952</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='link_0_clone_1'>
-          <pose frame=''>-6.28192 -2.8739 0 0 -0 0</pose>
+          <pose frame=''>-6.28116 -2.8686 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='link_0_clone_2'>
-          <pose frame=''>-6.28353 3.15707 0 0 -0 0</pose>
+          <pose frame=''>-6.28277 3.16237 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='link_0_clone_3'>
-          <pose frame=''>-2.19304 0.532728 0 0 -0 0</pose>
+          <pose frame=''>-2.19228 0.538027 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='link_0_clone_3_clone'>
-          <pose frame=''>2.08064 -0.327767 0 0 -0 0</pose>
+          <pose frame=''>2.0814 -0.322468 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='link_0_clone_4'>
-          <pose frame=''>-2.01321 4.91219 0 0 0 -1.587</pose>
+          <pose frame=''>-2.01245 4.91749 0 0 0 -1.587</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='link_0_clone_5'>
-          <pose frame=''>-1.78978 -5.40227 0 0 0 -1.59076</pose>
+          <pose frame=''>-1.78902 -5.39697 0 0 0 -1.59076</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -2198,6 +2208,95 @@
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
       <pose frame=''>-4.72755 4.07432 0 0 -0 0</pose>
+    </model>
+    <model name='CalibrationCheckboard'>
+      <link name='link_1'>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.166667</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.166667</iyy>
+            <iyz>0</iyz>
+            <izz>0.166667</izz>
+          </inertia>
+        </inertial>
+        <pose frame=''>-4e-06 -0 0 0 -0 0</pose>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/ros/catkin_ws/src/DeltaProject/toiletcleaner/meshes/CalibrationCheckboard/CalibrationCheckboard2.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <transparency>0</transparency>
+          <cast_shadows>1</cast_shadows>
+        </visual>
+        <collision name='collision'>
+          <laser_retro>0</laser_retro>
+          <max_contacts>10</max_contacts>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/ros/catkin_ws/src/DeltaProject/toiletcleaner/meshes/CalibrationCheckboard/CalibrationCheckboard2.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>0</slip1>
+                <slip2>0</slip2>
+              </ode>
+              <torsional>
+                <coefficient>1</coefficient>
+                <patch_radius>0</patch_radius>
+                <surface_radius>0</surface_radius>
+                <use_patch_radius>1</use_patch_radius>
+                <ode>
+                  <slip>0</slip>
+                </ode>
+              </torsional>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0</restitution_coefficient>
+              <threshold>1e+06</threshold>
+            </bounce>
+            <contact>
+              <collide_without_contact>0</collide_without_contact>
+              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+              <collide_bitmask>1</collide_bitmask>
+              <ode>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+                <max_vel>0.01</max_vel>
+                <min_depth>0</min_depth>
+              </ode>
+              <bullet>
+                <split_impulse>1</split_impulse>
+                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+              </bullet>
+            </contact>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>1</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose frame=''>-2.12991 0.045062 0 0 -0 0</pose>
     </model>
   </world>
 </sdf>
