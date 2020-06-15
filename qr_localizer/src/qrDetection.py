@@ -118,9 +118,10 @@ class QrDetector():
             return False,[],[],1
 
     def calculateOwnLocation(self,distance,QRAngX,QRAngY,QRAngZ):
-        X=math.cos(QRAngZ)*distance
+        X=math.sin(QRAngZ)*distance
         Y=math.cos(QRAngZ)*distance
-        Z=0
+        #Leave this for another moment:
+        Z=0 
         AngX=0
         AngY=0
         AngZ=180-QRAngZ
@@ -139,22 +140,24 @@ class QrDetector():
 
     def readImage(self,frame):
         """This only looks for QR-code and processes it from a single input image"""
-        data,bbox,rectifiedImage = self.qrDecoder.detectAndDecode(frame)                     
+        data,bbox,rectifiedImage = self.qrDecoder.detectAndDecode(frame) 
+        #hier print("Test if function didnt stop.")                       
         if len(data)>0:
-            print("ik heb hem wel gevonden")
+            #print("Test if QRcode was scanned")
             varify,coordinates, rotationCoordinates, size = self.qrData(data)
             if (varify):
                 idx = [1,2,0,3]
                 bbox = bbox[idx]
                 ret,rvecs, tvecs = cv2.solvePnP(self.objp, bbox, self.mtx, self.dist)
                 dis,ang = self.GetDistanceAndAngle(frame,rvecs,tvecs,float(size))
+                return [dis,ang[0][0],ang[1][0],ang[2][0]]
                 if(self.visualizeResult):
                     self.display(frame, rvecs,tvecs)
                     rectifiedImage = np.uint8(rectifiedImage)
                     cv2.imshow("Rectified QRCode", rectifiedImage)
                 return [dis,ang[0][0],ang[1][0],ang[2][0]]
         else:
-            print("ik heb hem niet gevonden")
+            #print("QRcode not found.")
             if(self.visualizeResult):
                 cv2.imshow("Results", frame)
         if(self.visualizeResult):
