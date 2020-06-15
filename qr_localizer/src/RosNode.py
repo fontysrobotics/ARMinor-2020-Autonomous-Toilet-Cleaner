@@ -12,7 +12,7 @@ from rospy_tutorials.msg import Floats
 
 from qrDetection import *
 
-qrDetector = QrDetector(mode=2,visualizeResult=True)
+qrDetector = QrDetector(mode=2,visualizeResult=True,debug=True)
 
 dtype = np.float64
 
@@ -37,14 +37,24 @@ def callback(data):
 
         #cv2.imshow("Image window", cv_image)
         data = qrDetector.readImage(cv_image)
-        #data = numpy.array([1.0, 2.1, 3.2, 4.3, 5.4, 6.5], dtype=numpy.float32)
-        talker(data)
+        if data[0]>0:
+            #data = numpy.array([1.0, 2.1, 3.2, 4.3, 5.4, 6.5], dtype=numpy.float32)
+            print("data")
+            talker(data)
+        else:
+            print("No data")
         cv2.waitKey(3)
 
 
 
 if __name__ == '__main__':
    
+    # if(rospy.get_param('~calibrate')):
+    #     print("calibrate true")
+    # else:
+    #     print("calibrate false")
+
+
     try:
         rospy.init_node('vision_py')
         rospy.Subscriber("/rrbot/camera2/image_raw", Image, callback)

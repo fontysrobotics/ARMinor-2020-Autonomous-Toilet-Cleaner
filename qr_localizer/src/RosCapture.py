@@ -7,21 +7,30 @@ from sensor_msgs.msg import Image
 #rospy to communicate with ros
 import rospy
 
+from calibration import *
+
+calibration = cameraCalibration(debug=True,showWindow=True)
 
 def callback(data):
     if data is not None:
         cv_image = CvBridge().imgmsg_to_cv2(data, "bgr8")
-
+        print("test")
         cv2.imshow("Image window", cv_image)
         #add picture to 
-
+        #calibration.addImage(cv_image)
+        
 
         #If a is pressed, store the image
         if cv2.waitKey(33) == ord('a'):
-            cv2.imwrite('ROSImage.png',cv_image)
+            print("saving")
+            #cv2.imwrite('ROSImage.png',cv_image)
+            #calibration.calibrate()
+            #calibration.saveCalibrationFile(filename="RosCalibrationFile.npz")
         
-        
-        cv2.waitKey(3)
+        #cv2.waitKey(3)
+
+        r = rospy.Rate(2) # 2hz
+        r.sleep()
 
 
 

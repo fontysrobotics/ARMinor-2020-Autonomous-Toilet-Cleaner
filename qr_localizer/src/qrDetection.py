@@ -139,8 +139,9 @@ class QrDetector():
 
     def readImage(self,frame):
         """This only looks for QR-code and processes it from a single input image"""
-        data,bbox,rectifiedImage = self.qrDecoder.detectAndDecode(frame)                        
+        data,bbox,rectifiedImage = self.qrDecoder.detectAndDecode(frame)                     
         if len(data)>0:
+            print("ik heb hem wel gevonden")
             varify,coordinates, rotationCoordinates, size = self.qrData(data)
             if (varify):
                 idx = [1,2,0,3]
@@ -151,7 +152,9 @@ class QrDetector():
                     self.display(frame, rvecs,tvecs)
                     rectifiedImage = np.uint8(rectifiedImage)
                     cv2.imshow("Rectified QRCode", rectifiedImage)
+                return [dis,ang[0][0],ang[1][0],ang[2][0]]
         else:
+            print("ik heb hem niet gevonden")
             if(self.visualizeResult):
                 cv2.imshow("Results", frame)
         if(self.visualizeResult):
@@ -159,7 +162,8 @@ class QrDetector():
             if k == 27:
                 self.stop=True
         time.sleep(0.05)
-        return [dis,ang[0][0],ang[1][0],ang[2][0]]
+        return [-1,-1,-1,-1]
+        
 
 
     def loop(self):
