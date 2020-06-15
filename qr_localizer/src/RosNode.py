@@ -12,7 +12,7 @@ from rospy_tutorials.msg import Floats
 
 from qrDetection import *
 
-qrDetector = QrDetector(mode=2,visualizeResult=True,debug=True)
+qrDetector = QrDetector(mode=2,CalibrationFile="RosCalibrationFile.npz",visualizeResult=True,debug=True)
 
 dtype = np.float64
 
@@ -22,7 +22,7 @@ def talker(dataArray):
     dataArrayNumpy = dataArrayNumpy.astype('float32')
     #print(type(dataArrayNumpy),dataArrayNumpy)
     pub = rospy.Publisher('QrCodeValues', numpy_msg(Floats),queue_size=10)
-    r = rospy.Rate(10) # 10hz
+    r = rospy.Rate(1) #hz
     #while not rospy.is_shutdown():
     #dataArrayNumpy = numpy.array([1.0, 2.1, 3.2, 4.3, 5.4, 6.5], dtype=numpy.float32)
     pub.publish(dataArrayNumpy)

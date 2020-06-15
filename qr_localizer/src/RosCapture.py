@@ -1,5 +1,16 @@
 #!/usr/bin/env python2
 
+
+#This node is used for calibrating the camera.
+#Open this file and drive past the checkerboard.
+#Press A if you have made enough pictures
+#It will store the callibration file as en NPZ
+
+
+
+
+
+
 import cv2
 from cv_bridge import CvBridge, CvBridgeError
 from sensor_msgs.msg import Image
