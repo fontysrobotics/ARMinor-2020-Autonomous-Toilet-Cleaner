@@ -17,16 +17,22 @@ def callback(data):
         print("test")
         cv2.imshow("Image window", cv_image)
         #add picture to 
-        #calibration.addImage(cv_image)
+        calibration.addImage(cv_image)
         
 
         #If a is pressed, store the image
         if cv2.waitKey(33) == ord('a'):
+            cv2.destroyAllWindows()
             print("saving")
             #cv2.imwrite('ROSImage.png',cv_image)
-            #calibration.calibrate()
-            #calibration.saveCalibrationFile(filename="RosCalibrationFile.npz")
+            try:
+                calibration.calibrate()
+                calibration.saveCalibrationFile(filename="RosCalibrationFile.npz")
+            except:
+                 rospy.signal_shutdown("Done calibrating")   
+            rospy.signal_shutdown("Done calibrating")
         
+
         #cv2.waitKey(3)
 
         r = rospy.Rate(2) # 2hz
@@ -37,15 +43,12 @@ def callback(data):
 if __name__ == '__main__':
    
     try:
-        rospy.init_node('vision_py')
+        rospy.init_node('vision_py',disable_signals=True)
 
-        while True:
-            rospy.Subscriber("/rrbot/camera2/image_raw", Image, callback)
+        #while True:
+        rospy.Subscriber("/rrbot/camera2/image_raw", Image, callback)
+        rospy.spin()
         
-            k = cv2.waitKey(5) & 0xFF
-            if k == 27:
-                cv2.destroyAllWindows()
-                break
         
             
     except rospy.ROSInterruptException:

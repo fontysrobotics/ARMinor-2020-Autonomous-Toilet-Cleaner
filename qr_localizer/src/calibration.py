@@ -39,6 +39,9 @@ class cameraCalibration():
     def saveCalibrationFile(self, filename="calibrationFile.npz"):
         if self.saveReady:
             np.savez(filename, _mtx_=self._mtx_,  _dist_=self. _dist_, _rvecs_=self._rvecs_, _tvecs_=self._tvecs_ )
+            if self.debug:
+                print("Calibration file saved")
+            return True
         else:
             if self.debug:
                 print("The calibration had nothing to save.")
@@ -92,6 +95,8 @@ class cameraCalibration():
             print(imgpoints)
         _, self._mtx_, self._dist_, self._rvecs_, self._tvecs_ = cv2.calibrateCamera(objpoints, imgpoints, gray.shape[::-1],None,None)
         self.saveReady = True
+        if(self.debug):
+            print("Ready to save file.")
 
     def calibrate(self):
         """Calibrate from added frames"""
@@ -99,19 +104,23 @@ class cameraCalibration():
         criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 30, 0.001)
 
         # prepare object points, like (0,0,0), (1,0,0), (2,0,0) ....,(6,5,0)
-        objp = np.zeros((chessX*chessY,3), np.float32)
-        objp[:,:2] = np.mgrid[0:chessX,0:chessY].T.reshape(-1,2)
+        objp = np.zeros((self.chessX*self.chessY,3), np.float32)
+        objp[:,:2] = np.mgrid[0:self.chessX,0:self.chessY].T.reshape(-1,2)
 
         # Arrays to store object points and image points from all the images.
         objpoints = [] # 3d point in real world space
         imgpoints = [] # 2d points in image plane.
 
-        for fname in self.frame:
-            img = cv2.imread(fname)
+        if self.debug:
+            print(str(len(self.frames))+" pictures found.")
+
+        for fname in self.frames:
+            print("Next frame")
+            img = fname
             gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 
             # Find the chess board corners
-            ret, corners = cv2.findChessboardCorners(gray, (chessX,chessY),None)
+            ret, corners = cv2.findChessboardCorners(gray, (self.chessX,self.chessY),None)
 
             # If found, add object points, image points (after refining them)
             if ret == True:
@@ -122,15 +131,19 @@ class cameraCalibration():
 
                 if self.showWindow:
                     # Draw and display the corners
-                    img = cv2.drawChessboardCorners(img, (chessX,chessY), corners2,ret)
+                    img = cv2.drawChessboardCorners(img, (self.chessX,self.chessY), corners2,ret)
                     cv2.imshow('img',img)
                     cv2.waitKey(100)
 
         cv2.destroyAllWindows()
-        if self.debug:
-            print(objpoints)
-            print(imgpoints)
-        _, self._mtx_, self._dist_, self._rvecs_, self._tvecs_ = cv2.calibrateCamera(objpoints, imgpoints, gray.shape[::-1])
+        if len(objpoints)<1:
+            print("No usefull images")
+        else:
+            if self.debug:
+                print(objpoints)
+                print(imgpoints)
+            _, self._mtx_, self._dist_, self._rvecs_, self._tvecs_ = cv2.calibrateCamera(objpoints, imgpoints, gray.shape[::-1],None,None)
+            self.saveReady = True
 
     def undistortPicture(self,pictureLocation, mtx, dist):
         lastImg = cv2.imread(pictureLocation)
