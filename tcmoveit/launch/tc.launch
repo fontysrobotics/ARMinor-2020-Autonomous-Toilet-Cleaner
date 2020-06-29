@@ -12,13 +12,6 @@
   <include file="$(find tcmoveit)/launch/move_group.launch">
     <arg name="publish_monitored_planning_scene" value="true"/>
   </include>
-
-  <!-- Play the rosbag that contains the pointcloud data -->
-  <node pkg="tcmoveit" type="bag_publisher_maintain_time" name="point_clouds" />
-
-  <!-- Run the detection and adding cylinder node -->
-  <node pkg="tcmoveit" type="cylinder_segment" name="point_cloud_preprocessor" />
-
   <include file="$(find tcmoveit)/launch/moveit_rviz.launch">
     <param name="config" value="true"/>
   </include>
