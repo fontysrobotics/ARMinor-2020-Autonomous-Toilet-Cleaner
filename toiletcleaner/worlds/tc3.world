@@ -88,7 +88,7 @@
     </scene>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>1.70212 2.97094 2.75091 -0 0.457799 -2.58599</pose>
+        <pose frame=''>9.0319 -8.06698 9.70124 -0 0.569799 2.4012</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -108,10 +108,10 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <state world_name='default'>
-      <sim_time>1457 434000000</sim_time>
-      <real_time>67 524755380</real_time>
-      <wall_time>1592218615 950216999</wall_time>
-      <iterations>67414</iterations>
+      <sim_time>1679 911000000</sim_time>
+      <real_time>224 617473794</real_time>
+      <wall_time>1593435625 791712338</wall_time>
+      <iterations>222477</iterations>
       <model name='CalibrationCheckboard'>
         <pose frame=''>-2.12991 0.045062 0.34 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -255,6 +255,9 @@
       </light>
       <light name='user_spot_light_0'>
         <pose frame=''>-1.07101 -0.077518 1.58805 0 0.742951 0</pose>
+      </light>
+      <light name='user_spot_light_1'>
+        <pose frame=''>-5.03384 3.80404 1.11303 0.608514 -0 0</pose>
       </light>
     </state>
     <model name='toiletenv'>
@@ -1131,7 +1134,7 @@
           <pose frame=''>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/ros/catkin_ws/src/deltaStartup-master/toiletcleaner/meshes/toilet/toilet4.obj</uri>
+              <uri>/home/nick/catkin_ws/src/toiletcleaner/meshes/toilet/toilet4.obj</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -1154,7 +1157,7 @@
           <pose frame=''>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/ros/catkin_ws/src/deltaStartup-master/toiletcleaner/meshes/toilet/toilet4.obj</uri>
+              <uri>/home/nick/catkin_ws/src/toiletcleaner/meshes/toilet/toilet4.obj</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -2141,7 +2144,7 @@
           <pose frame=''>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/ros/catkin_ws/src/DeltaProject/toiletcleaner/meshes/QR-codes/StandardQRCube.dae</uri>
+              <uri>/home/nick/catkin_ws/src/toiletcleaner/meshes/QR-codes/StandardQRCube.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -2154,7 +2157,7 @@
           <pose frame=''>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/ros/catkin_ws/src/DeltaProject/toiletcleaner/meshes/QR-codes/StandardQRCube.dae</uri>
+              <uri>/home/nick/catkin_ws/src/toiletcleaner/meshes/QR-codes/StandardQRCube.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -2230,7 +2233,7 @@
           <pose frame=''>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/ros/catkin_ws/src/DeltaProject/toiletcleaner/meshes/CalibrationCheckboard/CalibrationCheckboard2.dae</uri>
+              <uri>/home/nick/catkin_ws/src/toiletcleaner/meshes/CalibrationCheckboard/CalibrationCheckboard2.dae</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -2243,7 +2246,7 @@
           <pose frame=''>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/ros/catkin_ws/src/DeltaProject/toiletcleaner/meshes/CalibrationCheckboard/CalibrationCheckboard2.dae</uri>
+              <uri>/home/nick/catkin_ws/src/toiletcleaner/meshes/CalibrationCheckboard/CalibrationCheckboard2.dae</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -2303,6 +2306,24 @@
     </model>
     <light name='user_spot_light_0' type='spot'>
       <pose frame=''>-1.28977 0.136646 1 0 -0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0 0 -1</direction>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <spot>
+        <inner_angle>0.6</inner_angle>
+        <outer_angle>1</outer_angle>
+        <falloff>1</falloff>
+      </spot>
+    </light>
+    <light name='user_spot_light_1' type='spot'>
+      <pose frame=''>-5.03384 4.35602 1 0 -0 0</pose>
       <diffuse>0.5 0.5 0.5 1</diffuse>
       <specular>0.1 0.1 0.1 1</specular>
       <direction>0 0 -1</direction>
