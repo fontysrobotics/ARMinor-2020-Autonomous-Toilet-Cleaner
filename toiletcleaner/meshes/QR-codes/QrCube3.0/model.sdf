@@ -1,7 +1,7 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
-  <model name='CalibrationCheckboard'>
-    <link name='link_1'>
+  <model name='QrCube3.0'>
+    <link name='link_0'>
       <inertial>
         <mass>1</mass>
         <inertia>
@@ -13,12 +13,12 @@
           <izz>0.166667</izz>
         </inertia>
       </inertial>
-      <pose frame=''>-4e-06 -0 0 0 -0 0</pose>
+      <pose frame=''>4e-06 -1e-06 0 0 -0 0</pose>
       <visual name='visual'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>/home/nick/catkin_ws/src/toiletcleaner/meshes/CalibrationCheckboard/CalibrationCheckboard2.dae</uri>
+            <uri>/home/nick/catkin_ws/src/toiletcleaner/meshes/QR-codes/StandardQRCube.dae</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -31,7 +31,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>/home/nick/catkin_ws/src/toiletcleaner/meshes/CalibrationCheckboard/CalibrationCheckboard2.dae</uri>
+            <uri>/home/nick/catkin_ws/src/toiletcleaner/meshes/QR-codes/StandardQRCube.dae</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>

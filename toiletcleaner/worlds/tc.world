@@ -88,7 +88,7 @@
     </scene>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>6.29358 -5.79009 16.4738 0 0.966794 2.26159</pose>
+        <pose frame=''>-3.12221 1.38939 3.38953 0 0.784013 2.02292</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -108,10 +108,40 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <state world_name='default'>
-      <sim_time>404 192000000</sim_time>
-      <real_time>311 103582843</real_time>
-      <wall_time>1586258650 801791691</wall_time>
-      <iterations>309174</iterations>
+      <sim_time>583 340000000</sim_time>
+      <real_time>100 954453143</real_time>
+      <wall_time>1593012061 918415388</wall_time>
+      <iterations>99708</iterations>
+      <model name='CalibrationCheckboard'>
+        <pose frame=''>-2.12991 0.045062 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link_1'>
+          <pose frame=''>-2.12991 0.045062 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='QrCube2.0'>
+        <pose frame=''>-4.72755 4.07432 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link_0'>
+          <pose frame=''>-4.72755 4.07432 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='QrCube3.0'>
+        <pose frame=''>-5 4.95 0.34 3.14068 0 -1.57075</pose>
+        <scale>1 1 1</scale>
+        <link name='link_0'>
+          <pose frame=''>-5 4.95 0.34 3.14068 0 -1.57075</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
       <model name='bookshelf'>
         <pose frame=''>-1.43799 -2.91079 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -232,6 +262,9 @@
       </model>
       <light name='sun'>
         <pose frame=''>0 0 10 0 -0 0</pose>
+      </light>
+      <light name='user_spot_light_0'>
+        <pose frame=''>-1.28977 0.136646 1 0 -0 0</pose>
       </light>
     </state>
     <model name='toiletenv'>
