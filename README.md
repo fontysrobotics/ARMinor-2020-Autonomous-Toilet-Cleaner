@@ -50,7 +50,7 @@ Launch command:
 $ roslaunch tcmoveit tc.launch
 
 ## ROS lookup Table
-The robot makes use of a Lookup table. It is a requestable table of information in which a server or other robots can request information about the robot such as; locaiton, battery level, actions or anything else added.
+The robot makes use of a Lookup table. It is a requestable table of information in which a server or other robots can request information about the robot such as; locaiton, battery level, actions or anything else added.  
 To implement this the following example code can be checked */something/something/something.py*
 
 ## QR-localization
@@ -59,8 +59,9 @@ The QR-localization is made up of three parts:
 •	QR-code creation
 •	Localization
 The whole project can be used using ROS or using the python source files.
+
 ### Calibration of Camera
-Camera distortion is caused by a deviation in manufacturing the physical parts. The lenses inside a camera a responsible for creating a laminar image but due to very small deviations the image will be distorted. In some cases, the distortion is intentional to create a larger angle of view. Take a fish-eye lens as an example.
+Camera distortion is caused by a deviation in manufacturing the physical parts. The lenses inside a camera a responsible for creating a laminar image but due to very small deviations the image will be distorted. In some cases, the distortion is intentional to create a larger angle of view. Take a fish-eye lens as an example.  
 The script uses a checkerboard as a reference to see deformations in the lens. The information can be saved to a file to use in later references.
 
 #### _From calibration import cameraCalibration_
@@ -80,7 +81,13 @@ Save a calibration with ‘filename’ for later use or use within different cod
 ### QR-Creation
 QR-Codes are very useful markers as they can not only be used to find orientation, but they can also contain information. Making it great to store coordinates, orientation and the QR-codes size, allowing for different size markers.
 Getting started:
-Import the QRcreation class from the source files
+
+from qrCodeGenerator import locationCode  
+QRcode = locationCode(X,Y,Z,RotationX,RotationY,RotationZ,Size,QRcodeName)  
+QRcode.createQR()  
+
+This script can also be used within for loops to create largere amounts of QRcodes
+
 
 ### QR-Detection
 This is the part where the software uses the calibrated camera and the QR-codes that were made with the other script to detect its location within the envourment. 
