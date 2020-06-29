@@ -48,3 +48,33 @@ TcMoveit:
 The package contains moveit configuration files and a launch file to start required nodes in order to simulate moveit integration with the robot.
 Launch command:
 $ roslaunch tcmoveit tc.launch
+
+
+## QR-localization
+The QR-localization is made up of three parts:
+•	Calibration of Camera
+•	QR-code creation
+•	Localization
+The whole project can be used using ROS or using the python source files.
+### Calibration of Camera
+Camera distortion is caused by a deviation in manufacturing the physical parts. The lenses inside a camera a responsible for creating a laminar image but due to very small deviations the image will be distorted. In some cases, the distortion is intentional to create a larger angle of view. Take a fish-eye lens as an example.
+The script uses a checkerboard as a reference to see deformations in the lens. The information can be saved to a file to use in later references.
+
+***From calibration import cameraCalibration***
+The possible functions:
+#### _calibrateFromFolder(pictureLocation)_
+pictureLocation is the location of a photograph to calibrate. (use * for multiple files.) ["calibrationFiles/*.jpg"]
+
+#### _addImage(frame)_
+Append Image to be used in the calibration.
+
+#### _calibrate()_
+Calibate using appended images
+
+#### _saveCalibrationFile(filename)_
+Save a calibration with ‘filename’ for later use or use within different code. ["calibrationFile.npz"]
+
+### QR-Creation
+QR-Codes are very useful markers as they can not only be used to find orientation, but they can also contain information. Making it great to store coordinates, orientation and the QR-codes size, allowing for different size markers.
+Getting started:
+Import the QRcreation class from the source files
