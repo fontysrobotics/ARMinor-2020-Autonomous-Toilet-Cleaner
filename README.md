@@ -85,8 +85,13 @@ Getting started:
 from qrCodeGenerator import locationCode  
 QRcode = locationCode(X,Y,Z,RotationX,RotationY,RotationZ,Size,QRcodeName)  
 QRcode.createQR()  
+  
+The X,Y,Z coordinates are used as position of the QR-code within the world.  
+The rotationX,rotationY,rotationZ indicate its orientation.  
+The size of the QR-code can be altered from its default of 13cm (Size is in cm)  
+and the QRcodeName is the image filename.  
 
-This script can also be used within for loops to create largere amounts of QRcodes
+This script can also be used within for loops to create largere amounts of QRcodes.
 
 
 ### QR-Detection
