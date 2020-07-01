@@ -22,7 +22,7 @@ def talker(dataArray):
     dataArrayNumpy = dataArrayNumpy.astype('float32')
     #print(type(dataArrayNumpy),dataArrayNumpy)
     pub = rospy.Publisher('QrCodeValues', numpy_msg(Floats),queue_size=10)
-    r = rospy.Rate(1) #hz
+    r = rospy.Rate(0.5) #hz
     #while not rospy.is_shutdown():
     #dataArrayNumpy = numpy.array([1.0, 2.1, 3.2, 4.3, 5.4, 6.5], dtype=numpy.float32)
     pub.publish(dataArrayNumpy)
@@ -39,7 +39,7 @@ def callback(data):
         data = qrDetector.readImage(cv_image)
         if data[0]>0:
             #data = numpy.array([1.0, 2.1, 3.2, 4.3, 5.4, 6.5], dtype=numpy.float32)
-            print("data")
+            #print("data")
             talker(data)
         else:
             print("No data")

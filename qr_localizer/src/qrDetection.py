@@ -150,7 +150,6 @@ class QrDetector():
                 bbox = bbox[idx]
                 ret,rvecs, tvecs = cv2.solvePnP(self.objp, bbox, self.mtx, self.dist)
                 dis,ang = self.GetDistanceAndAngle(frame,rvecs,tvecs,float(size))
-                return [dis,ang[0][0],ang[1][0],ang[2][0]]
                 if(self.visualizeResult):
                     self.display(frame, rvecs,tvecs)
                     rectifiedImage = np.uint8(rectifiedImage)

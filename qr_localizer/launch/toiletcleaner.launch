@@ -2,6 +2,6 @@
     <!--Just for faster tesing-->
     <include file="$(find toiletcleaner)/launch/robot.launch" />
     <include file="$(find tcnav)/launch/teb.launch" />
-
+    <include file="$(find qr_localizer)/launch/qr_localizer.launch" />
     <node name="listener_node" pkg="qr_localizer" type="RosNode.py" cwd="node" output="screen" respawn="true"/>
 </launch>

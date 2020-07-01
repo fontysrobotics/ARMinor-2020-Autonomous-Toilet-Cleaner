@@ -1,0 +1,8 @@
+<launch>  
+    <include file="$(find toiletcleaner)/launch/robot.launch" />
+    <include file="$(find tcnav)/launch/teb.launch" />
+    <include file="$(find tcmoveit)/launch/tc.launch" />
+    <!-- ROSRUN-->
+    <node name="octomap_server_node" type="octomap_server_node" pkg="octomap_server" output="screen" args="$(find octomap_server)/toilet_octomap_detail.bt"/>
+    
+</launch>

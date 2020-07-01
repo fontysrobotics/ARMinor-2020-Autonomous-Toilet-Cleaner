@@ -10,13 +10,11 @@ from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
  #x,y:w,z
 waypoint1 = [0.512904361916, -4.55462047238, 1, 0]      #bottom right
 waypoint2 = [-3.87694825, -4.37246237871, 0.7,0.7]      #bottom left
-waypoint3 = [-4.72789552129, 3.79606732539, -0.7, -0.7] #qr code
-waypoint4 = [-6.18337765493, 0.537425876183, -1, 0] #toilet
+qrCode = [-4.97636646652, 4.29934520406, -0.7, -0.7] 
+toilet = [-6.3675401338, 0.466594043915, 0.7, -0.7] 
  
-waypoints = [waypoint1, 
- waypoint2, 
- waypoint3,
- waypoint4]
+#waypoints = [waypoint1,waypoint2,qrCode,waypoint2,waypoint1]
+waypoints = [qrCode,toilet]
 
 def movebase_client(waypoint):
  
