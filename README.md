@@ -64,6 +64,10 @@ The whole project can be used using ROS or using the python source files.
 Camera distortion is caused by a deviation in manufacturing the physical parts. The lenses inside a camera a responsible for creating a laminar image but due to very small deviations the image will be distorted. In some cases, the distortion is intentional to create a larger angle of view. Take a fish-eye lens as an example.  
 The script uses a checkerboard as a reference to see deformations in the lens. The information can be saved to a file to use in later references.
 
+#### Calibration in ROS
+To begin the calibration in ROS you first put the robot in front of the calibration board. Then run the command: roslaunch qr_localizer calibrate.launch 
+Drive the robot around while keeping the camera pointed to the calibration board. CLick on the image and press the a button to stop the calibration. Now it will calculate the camera veriables and store these to be used for the localization.
+
 #### _From calibration import cameraCalibration_
 The possible functions:
 #### _calibrateFromFolder(pictureLocation)_
@@ -96,3 +100,5 @@ This script can also be used within for loops to create largere amounts of QRcod
 
 ### QR-Detection
 This is the part where the software uses the calibrated camera and the QR-codes that were made with the other script to detect its location within the envourment. 
+To run the QR-Detection use the command: roslaunch qr_localizer qr_localizer.launch. 
+Drive the robot around with Rviz and the set target arrow. The screen will display the cordinates of the robot.
