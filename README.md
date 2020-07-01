@@ -99,11 +99,11 @@ This script can also be used within for loops to create largere amounts of QRcod
 
 
 ### QR-Detection
-This is the part where the software uses the calibrated camera and the QR-codes that were made with the other script to detect its location within the envourment. 
-To run the QR-Detection use the command: roslaunch qr_localizer qr_localizer.launch. 
-Drive the robot around with Rviz and the set target arrow. The screen will display the cordinates of the robot.
+This is the part where the software uses the calibrated camera and the QR-codes that were made with the other script to detect its location within the envourment.  
+To run the QR-Detection in the ROS base use the command: roslaunch qr_localizer qr_localizer.launch.  
+Drive the robot around with Rviz and the set target arrow. The screen will display the cordinates of the robot.  
 
-To get started with the software import the class from the source file:  
+To get started with the software as standalone import the class from the source file:  
 #### _from qrDetection import QrDetector_  
 Then add an instance  
 #### _detect = QrDetector(CalibrationFile='CalibrationFile.npz',mode=0,pictureFolder="QR/*.jpg",visualizeResult=False,debug=False,caneraNum=0)_
