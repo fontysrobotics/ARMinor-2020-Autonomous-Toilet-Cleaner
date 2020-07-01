@@ -90,9 +90,31 @@ The X,Y,Z coordinates are used as position of the QR-code within the world.
 The rotationX,rotationY,rotationZ indicate its orientation.  
 The size of the QR-code can be altered from its default of 13cm (Size is in cm)  
 and the QRcodeName is the image filename.  
-
-This script can also be used within for loops to create largere amounts of QRcodes.
+  
+This script can also be used within for loops to create largere amounts of QRcodes.  
 
 
 ### QR-Detection
-This is the part where the software uses the calibrated camera and the QR-codes that were made with the other script to detect its location within the envourment. 
+This is the part where the software uses the calibrated camera and the QR-codes that were made with the other script to detect its location within the envourment.  
+
+
+To get started with the software import the class from the source file:  
+#### _from qrDetection import QrDetector_  
+Then add an instance  
+#### _detect = QrDetector(CalibrationFile='CalibrationFile.npz',mode=0,pictureFolder="QR/*.jpg",visualizeResult=False,debug=False,caneraNum=0)_
+The QrDetector initial function takes multiple arguments.  
+The calibration file is needed to calibrate the camera and made using a script above.  
+The mode sets whether to use Camera/webcam, images from a folder or a live feed from an external source (such as ROS) [mode 0,1,2 respectively]  
+The pictureFolder is only needed in mode1 and like the calibration is the image file. using an astrix will allow a whole folder.  
+Visualize result will use create a window showing what computing and overlaying is being done for the calculations. (Good option for debugging)  
+Debug mode is toggled to output debug info to console.  
+Camera number is needed for mode 0. This is the webcam that the software will use. This needs to be changed in the case of multiple cameras.  
+
+#### _readImage(frame)_
+Read QR-detection from frame. This is used when data is being sent from another source such as with ROS.  
+
+#### _loop()_
+This starts the loop for reading the images or webcam.  
+
+#### _closeCap()_
+Closes the webcam feed. This is needed at the end of the script when using mode 0.  
