@@ -50,8 +50,10 @@ Launch command:
 $ roslaunch tcmoveit tc.launch
 
 ## ROS lookup Table
-The robot makes use of a Lookup table. It is a requestable table of information in which a server or other robots can request information about the robot such as; locaiton, battery level, actions or anything else added.  
+The robot makes use of a Lookup table. It is a requestable table of information in which a server or other robots can request information about the robot such as; location, battery level, actions or anything else added.  
 To implement this the following example code can be checked */something/something/something.py*
+To start this the following command can be used: $ roslaunch overview overview.launch
+The code has a few functions to add/update/remove functions from the lookup table
 
 ## QR-localization
 The QR-localization is made up of three parts:
@@ -65,7 +67,7 @@ Camera distortion is caused by a deviation in manufacturing the physical parts. 
 The script uses a checkerboard as a reference to see deformations in the lens. The information can be saved to a file to use in later references.
 
 #### Calibration in ROS
-To begin the calibration in ROS you first put the robot in front of the calibration board. Then run the command: roslaunch qr_localizer calibrate.launch 
+To begin the calibration in ROS you first put the robot in front of the calibration board. Then run the command:$ roslaunch qr_localizer calibrate.launch 
 Drive the robot around while keeping the camera pointed to the calibration board. CLick on the image and press the a button to stop the calibration. Now it will calculate the camera veriables and store these to be used for the localization.
 
 #### _From calibration import cameraCalibration_
@@ -100,7 +102,7 @@ This script can also be used within for loops to create largere amounts of QRcod
 
 ### QR-Detection
 This is the part where the software uses the calibrated camera and the QR-codes that were made with the other script to detect its location within the envourment.  
-To run the QR-Detection in the ROS base use the command: roslaunch qr_localizer qr_localizer.launch.  
+To run the QR-Detection in the ROS base use the command: $ roslaunch qr_localizer qr_localizer.launch.  
 Drive the robot around with Rviz and the set target arrow. The screen will display the cordinates of the robot.  
 
 To get started with the software as standalone import the class from the source file:  
