@@ -5,7 +5,7 @@ The document will explain the gazebo,  robot description, Slam_gmapping, navigat
 A demo video can be found at: _https://youtu.be/FsXPII8OoOU_
 In this link you can find the final result after implementing all the packages including octomap (_http://wiki.ros.org/octomap_): _https://youtu.be/KRT96bKQ_DQ_
 
-This project is one of the deliverables of the ROSIN EP FREROS project. It was developed for the Adaptive Robotics minor of Fontys University of Applied Sciences which aims to be one of the best ROS and Robotics education center's in the Netherlands.
+**This project is one of the deliverables of the [ROSIN EP FREROS project](https://www.rosin-project.eu/ftp/freros). It was developed for the Adaptive Robotics minor of Fontys University of Applied Sciences which aims to be one of the best ROS and Robotics education center's in the Netherlands.**
 ## Gitrepo: 
 Gazebo environment:
 The environment consists of two main spaces. The first one simulates a main area (living room , office ..), the second is a main space that has access to a toilet space. The environment was created to  simulate a scenario where the robot can perform  mapping and navigation tasks.
